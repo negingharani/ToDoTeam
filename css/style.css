@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px;
+}
+
+.hero {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: fadeInDown 0.8s;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s;
+}
+
+.cards-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeIn 1s;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 350px;
+    margin: 50px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.card-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+
+.btn {
+    padding: 8px 30px 13px 30px;
+    border: 2px solid #764ba2;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 30px;
+    font-weight: 500;
+    width: 70%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* رنگ دکمه‌ها */
+.btn-login {
+    color: #764ba2;
+}
+
+.btn-register {
+    color: #764ba2;
+}
+
+/* هاور دکمه‌ها - با پس زمینه صفحه یکی میشه */
+.btn-login:hover, .btn-register:hover {
+    background: rgba(102, 126, 234, 0.2);
+}
+
+/* کلیک دکمه‌ها */
+.btn:active {
+    transform: scale(0.98);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* پاسخگو */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .card {
+        width: 280px;
+        padding: 30px 20px;
+        margin: 10px;
+    }
+    
+    .card h2 {
+        font-size: 1.3rem;
+    }
+    
+    .card p {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 7px 25px 11px 25px;
+        font-size: 0.9rem;
+    }
+}
