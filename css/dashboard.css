@@ -1,0 +1,260 @@
+:root {
+    --primary: #667eea;
+    --dark: #2b2d42;
+    --gray: #6c757d;
+    --light: #f8f9fa;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #eef2f5;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 75px;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 80px;
+    height: 60px;
+    background-image: url('../image/logo.png'); /* به آدرس‌دهی فایل دقت کنید */
+    background-size:contain;        /* تصویر کل دایره/مربع را بدون دفرمه شدن پر می‌کند */
+    background-position: center;  /* تصویر کاملاً در مرکز دیو قرار می‌گیرد */
+    background-repeat: no-repeat; /* از تکرار شدن تصویر جلوگیری می‌کند */
+    
+    /* اگر می‌خواهید لوگو دایره‌ای باشد این خط را اضافه کنید */
+    border-radius: 50%; 
+}
+
+.nav-menu {
+    flex: 1;
+}
+
+.ni, .user-sidebar-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 0;
+    margin: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #5a5c69;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.ni:hover {
+    background: #f0f2ff;
+    color: var(--primary);
+}
+
+.ni.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+.user-sidebar-badge.active{
+    background-color: transparent;
+    
+}
+.logout-item {
+    color: red;
+}
+
+.user-badge {
+    text-align: center;
+    padding: 7px 0;
+    font-size: 12px;
+}
+
+/* MAIN */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.content-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+/* STATS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* TASKS */
+.tasks-board {
+    display: flex;
+    gap: 15px;
+}
+
+.task-column {
+    flex: 1;
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.task-item {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+/* استایل شبکه کارت اعضا */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* کارت مربعی عضو */
+.member-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s;
+}
+
+.member-card:hover {
+    transform: translateY(-4px);
+}
+
+/* عکس دایره‌ای بالای کارت */
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 3px solid #764ba2;
+    background: #f7fafc;
+}
+
+/* نام عضو */
+.member-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 5px;
+}
+
+/* نقش فرد در پروژه */
+.member-badge-role {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* رنگ‌بندی نقش‌ها */
+.role-manager {
+    background: #fed7d7;
+    color: #9b2c2c;
+}
+
+.role-member {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+.home-avatar-item {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+.home-avatar-item:hover {
+    transform: scale(1.18);
+    box-shadow: 0 4px 10px rgba(118, 75, 162, 0.3);
+    z-index: 10;
+}
+.home-avatar-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tasks-board {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    height: calc(100vh - 120px); 
+    align-items: stretch;
+}
+
+.task-column {
+    background: #f7fafc; 
+    padding: 15px; 
+    border-radius: 12px; 
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    max-height: 100%; 
+}
+
+.column-body {
+    flex: 1;
+    overflow-y: auto;
+    padding-left: 5px; 
+    scrollbar-width: thin; 
+}
+/* استایل‌های اختصاصی برای بخش تنظیمات */
+.settings-form label { display: block; margin-top: 15px; font-weight: 600; color: #4a5568; }
+.form-input { width: 100%; padding: 12px; margin-top: 8px; border: 1.5px solid #e2e8f0; border-radius: 10px; box-sizing: border-box; }
+
+.projects-list { margin-top: 15px; }
+.project-item { 
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px; border-bottom: 1px solid #f1f5f9; 
+}
+.badge-active { background: #c6f6d5; color: #22543d; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; }
+.btn-switch { color: #764ba2; font-size: 0.85rem; text-decoration: none; font-weight: bold; }
+.btn-create-project { 
+    display: block; margin-top: 20px; padding: 10px; text-align: center;
+    background: #edf2f7; color: #4a5568; border-radius: 8px; text-decoration: none; 
+}

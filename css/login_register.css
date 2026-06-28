@@ -13,6 +13,7 @@ body {
     align-items: center;
     direction: rtl;
     user-select: none;
+    padding: 20px;
 }
 
 .box {
@@ -28,7 +29,13 @@ body {
     animation: fadeInDown 0.8s ease;
 }
 
-h1 {
+/* برای صفحات بزرگتر مثل داشبورد */
+.box-large {
+    width: 800px;
+    max-width: 95%;
+}
+
+h1, h2 {
     color: #2d3748;
     margin-bottom: 20px;
     font-size: 1.8rem;
@@ -80,7 +87,7 @@ p {
 .every:focus {
     outline: none;
     background-color: #ffffff;
-    border-color: #764ba2; 
+    border-color: #764ba2;
     box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
 }
 
@@ -93,7 +100,7 @@ p {
     padding-left: 48px;
 }
 
-#togglePass {
+#togglePass, #togglePassConfirm {
     position: absolute;
     left: 16px;
     top: 50%;
@@ -105,42 +112,43 @@ p {
     user-select: none;
 }
 
-#togglePass:hover {
+#togglePass:hover, #togglePassConfirm:hover {
     opacity: 1;
     transform: translateY(-50%) scale(1.1);
 }
 
 .btn {
-    padding: 8px 30px 13px 30px;
-    width: 70%;
+    padding: 12px 30px;
+    width: 100%;
     border: 2px solid #764ba2;
-    background: transparent;
+    background: #764ba2;
+    color: white;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
     display: inline-block;
     border-radius: 30px;
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.btn:hover, .btn-register:hover {
-    background: rgba(102, 126, 234, 0.2);
+
+.btn:hover {
+    background: transparent;
+    color: #764ba2;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #764ba2;
+}
+
+.btn-secondary:hover {
+    background: rgba(118, 75, 162, 0.1);
 }
 
 .btn:active {
     transform: scale(0.98);
-}
-.div-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.form-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5px;
 }
 
 .linked {
@@ -154,10 +162,6 @@ p {
 .linked:hover {
     color: #667eea;
     text-decoration: underline;
-}
-
-.secondary-link {
-    font-weight: 600;
 }
 
 hr {

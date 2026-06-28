@@ -23,10 +23,10 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="utf-8">
-    <title>پروژه‌های من</title>
+    <title>ToDo Team | پروژه‌های من</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="shortcut icon" href="image/fav.png" type="image/x-icon">
 </head>
 <body>
 
