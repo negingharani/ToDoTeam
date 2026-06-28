@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* هماهنگ با پس‌زمینه اصلی صفحه Intro */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
@@ -26,7 +25,6 @@ body {
     text-align: center;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* اعمال انیمیشن ورود روان هماهنگ با صفحه اصلی */
     animation: fadeInDown 0.8s ease;
 }
 
@@ -82,7 +80,7 @@ p {
 .every:focus {
     outline: none;
     background-color: #ffffff;
-    border-color: #764ba2; /* هماهنگ با رنگ سازمانی بنفش */
+    border-color: #764ba2; 
     box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
 }
 
@@ -130,7 +128,6 @@ p {
     background: rgba(102, 126, 234, 0.2);
 }
 
-/* کلیک دکمه‌ها */
 .btn:active {
     transform: scale(0.98);
 }
@@ -147,7 +144,7 @@ p {
 }
 
 .linked {
-    color: #764ba2; /* هماهنگ با بنفش اصلی دکمه‌ها */
+    color: #764ba2;
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
@@ -169,7 +166,6 @@ hr {
     border-top: 1px solid #edf2f7;
 }
 
-/* انیمیشن سرازیر شدن از بالا هماهنگ با Intro */
 @keyframes fadeInDown {
     from {
         opacity: 0;

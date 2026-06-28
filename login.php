@@ -8,7 +8,6 @@ if (isset($_SESSION['user_id'])) {
     exit;
 }
 
-// نگهداری ایمیل قبلی
 $old_email = isset($_SESSION['old_email']) ? $_SESSION['old_email'] : '';
 unset($_SESSION['old_email']); 
 ?>
@@ -68,7 +67,6 @@ const loginForm = document.getElementById("loginForm");
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// تابع کمکی برای مخفی کردن خطاها
 function hideErrors() {
     jsError.style.display = "none";
     if (sessionError) {
@@ -76,34 +74,32 @@ function hideErrors() {
     }
 }
 
-// چک کردن دائمی ایمیل در حین تایپ
+
 emailInput.addEventListener("input", () => {
     let emailValue = emailInput.value.trim();
     
-    // اگر کاربر شروع به نوشتن کرد و فرمت درست شد، خطا غیب شود
     if (emailValue !== "" && emailRegex.test(emailValue)) {
         hideErrors();
     }
 });
 
-// چک کردن دائمی رمز عبور در حین تایپ
+
 passInput.addEventListener("input", () => {
     let passValue = passInput.value.trim();
     
-    // به محض اینکه رمز عبور دیگر خالی نبود، خطا غیب شود
     if (passValue !== "") {
         hideErrors();
     }
 });
 
-// بررسی نهایی هنگام زدن دکمه ورود (Submit)
+
 loginForm.addEventListener("submit", (e) => {
     let emailValue = emailInput.value.trim();
     let passValue = passInput.value.trim();
     
-    // ۱. چک کردن خالی بودن فیلدها
+
     if (emailValue === "" || passValue === "") {
-        e.preventDefault(); // جلوگیری از ارسال فرم
+        e.preventDefault(); 
         jsError.textContent = "فیلدها نباید خالی باشند";
         jsError.style.display = "block";
         
@@ -112,9 +108,8 @@ loginForm.addEventListener("submit", (e) => {
         return;
     }
     
-    // ۲. چک کردن فرمت ایمیل
     if (!emailRegex.test(emailValue)) {
-        e.preventDefault(); // جلوگیری از ارسال فرم
+        e.preventDefault(); 
         jsError.textContent = "فرمت ایمیل وارد شده صحیح نیست";
         jsError.style.display = "block";
         emailInput.focus();
@@ -122,7 +117,6 @@ loginForm.addEventListener("submit", (e) => {
     }
 });
 
-// نمایش/مخفی‌سازی رمز عبور
 const toggle = document.getElementById("togglePass");
 toggle.addEventListener("click", () => {
     if (passInput.type === "password") {

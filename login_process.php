@@ -13,24 +13,20 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 $password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
-// ذخیره ایمیل برای جلوگیری از پاک شدن در صورت بروز خطا
 $_SESSION['old_email'] = $email;
 
-// چک خالی بودن سمت سرور
 if (empty($email) || empty($password)) {
     $_SESSION['error'] = "فیلدها نباید خالی باشند";
     header("Location: login.php");
     exit;
 }
 
-// بررسی فرمت ایمیل سمت سرور
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $_SESSION['error'] = "فرمت ایمیل وارد شده صحیح نیست";
     header("Location: login.php");
     exit;
 }
 
-// بررسی دیتابیس
 $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
 $stmt->execute([$email]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -41,7 +37,6 @@ if (!$user || !password_verify($password, $user['password'])) {
     exit;
 }
 
-// پاک کردن ایمیل موقت در صورت لاگین موفق
 unset($_SESSION['old_email']);
 
 session_regenerate_id(true);
